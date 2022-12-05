@@ -50,7 +50,7 @@ function startCountdown() {
 
 function createDragFrame() {
   let body = document.getElementsByTagName("body")[0];
-  body.innerHTML = "<img id=\"cross\" src=\"./cross.svg\" alt=\"cross\" />";
+  body.innerHTML = "<img id=\"cross\" src=\"./assets/cross.svg\" alt=\"cross\" />";
 
   let frame = document.createElement("iframe");
   frame.src = "./drag.html";

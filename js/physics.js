@@ -143,7 +143,7 @@ window.addEventListener("DOMContentLoaded", function () {
         render: {
           strokeStyle: "blue",
           sprite: {
-            texture: "./apple.svg",
+            texture: "./assets/apple.svg",
             xScale: 0.5,
             yScale: 0.5,
           },
@@ -208,7 +208,7 @@ window.addEventListener("DOMContentLoaded", function () {
       fillStyle: "transparent",
       lineWidth: 2,
       sprite: {
-        texture: "./bucket.svg",
+        texture: "./assets/bucket.svg",
         xScale: 0.65,
         yScale: 0.65,
         yOffset: 0.35,
