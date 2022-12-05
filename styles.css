@@ -1,0 +1,103 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  justify-content: center;
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+nav p {
+  margin: 0;
+}
+
+nav .type {
+  box-sizing: border-box;
+  background-color: #e5eafe;
+  border: 0.25rem solid black;
+  border-radius: 0.25rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+a {
+  min-width: 3rem;
+  text-decoration: none;
+}
+
+a:hover {
+  border: none;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 100%;
+}
+
+.wrapper > div {
+  background-color: #d9d9d9;
+  border-radius: 0.25rem;
+  aspect-ratio: 1/1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+}
+
+.wrapper > div:hover {
+  outline: rgb(26, 198, 94, 65%) solid 0.25rem;
+  outline-offset: -0.25rem;
+}
+
+table,
+th,
+td {
+  border: 1px solid;
+}
+
+canvas {
+  border: 1px solid;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+#cross {
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  /*display: none;*/
+}
