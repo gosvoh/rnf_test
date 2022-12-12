@@ -1,11 +1,15 @@
-.wrapper {
+#wrapper {
   display: grid;
-  grid-template-columns: repeat(3, auto);
   gap: 2rem;
   width: 100%;
+  grid-template-columns: repeat(3, auto);
 }
 
-.wrapper > div {
+#wrapper.small {
+  grid-template-columns: repeat(4, auto);
+}
+
+#wrapper > div {
   background-color: #d9d9d9;
   border-radius: 0.25rem;
   aspect-ratio: 1/1;
@@ -16,7 +20,7 @@
   font-size: 3rem;
 }
 
-.wrapper > div:hover {
+#wrapper > div:hover {
   outline: rgb(26, 198, 94, 65%) solid 0.25rem;
   outline-offset: -0.25rem;
 }

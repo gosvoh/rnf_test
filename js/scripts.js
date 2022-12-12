@@ -5,8 +5,36 @@ const squares = {
   square4: 0,
   square5: 0,
   square6: 0,
+  square7: 0,
+  square8: 0,
 };
 let isClicked = false;
+let checkbox = document.getElementById("size");
+let wrapper = document.getElementById("wrapper");
+
+checkbox.addEventListener("change", function () {
+  if (isClicked) return;
+
+  if (this.checked) {
+    wrapper.classList.remove("small");
+    wrapper.removeChild(wrapper.lastChild);
+    wrapper.removeChild(wrapper.lastChild);
+  } else {
+    wrapper.classList.add("small");
+    let newDiv = document.createElement("div");
+    newDiv.classList.add("square");
+    newDiv.id = "square7";
+    newDiv.addEventListener("click", countClick(this));
+    newDiv.innerHTML = "7";
+    wrapper.appendChild(newDiv);
+    newDiv = document.createElement("div");
+    newDiv.classList.add("square");
+    newDiv.id = "square8";
+    newDiv.addEventListener("click", countClick(this));
+    newDiv.innerHTML = "8";
+    wrapper.appendChild(newDiv);
+  }
+});
 
 function countClick(btn) {
   if (!isClicked && btn.id === "square1") startCountdown();
@@ -15,7 +43,6 @@ function countClick(btn) {
 
 function startCountdown() {
   isClicked = true;
-  let wrapper = document.getElementById("wrapper");
   let squaresDivs = wrapper.getElementsByClassName("square");
   let currentSquare = 0;
 
