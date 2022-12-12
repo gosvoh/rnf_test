@@ -2,10 +2,12 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RNF Test</title>
-    <link rel="stylesheet" href="css/styles.css" />
-    <script src="https://api.gazerecorder.com/GazeCloudAPI.js" defer></script>
-    <script src="js/gaze.js" defer></script>
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <!-- <script src="https://api.gazerecorder.com/GazeCloudAPI.js" defer></script> -->
+    <!-- <script src="js/gaze.js" defer></script> -->
     <script src="js/scripts.js" defer></script>
   </head>
   <body>
@@ -41,7 +43,34 @@
             <polygon points="9.2,7.3 9.2,18.5 12.2,15.6 12.6,15.5 17.4,15.5 " />
           </svg>
         </a>
-        <a href="#" onclick="createDragFrame()">
+        <a href="butterfly.html">
+          <svg
+            version="1.1"
+            id="Layer_1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px"
+            y="0px"
+            viewBox="0 -500 2480.393 2142.067"
+            xml:space="preserve"
+          >
+            <g>
+              <path
+                d="M1240.181,1335.265c-17.355,15.969-37.142,215.974-277.169,275.401c-89.973,22.276-174.08,6.747-254.336-36.1
+		c-286.138-152.763-476.87-504.326-214.997-604.473c39.123-14.962,80.166-22.145,121.066-29.925
+		c4.992-0.95,10.243-1.329,15.32-4.948c-30.083-22.353-366.946,3.429-545.476-323.107C26.362,505.614,4.148,235.454,82.613,114.252
+		c21.796-33.667,54.489-50.687,92.269-60.606c401.058-105.292,845.902,72.277,1000.86,305.181
+		c33.932,51.001,49.046,90.553,62.867,137.796c0.197,0.673,0.927,1.191,1.51,1.903c3.05-1.522,3.095-4.655,3.753-7.145
+		c95.107-360.189,672.587-548.635,1072.259-434.574c159.416,45.495,147.721,330.51,105.197,491.029
+		c-27.635,104.316-136.259,246.944-300.729,320.054c-47.551,21.138-97.928,33.326-148.66,44.037
+		c-107.86,22.774-119.889,15.635-120.21,23.394c-0.258,6.247,60.51,11.114,114.79,28.065
+		c372.573,116.349-58.877,651.496-356.807,657.575c-55.407,1.13-108.479-11.067-159.456-32.663
+		c-146.366-62.005-182.316-182.417-205.582-245.672C1243.717,1340.018,1243.04,1337.14,1240.181,1335.265z"
+              />
+            </g>
+          </svg>
+        </a>
+        <a href="drag.html">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -140,6 +169,6 @@
       <div class="square" id="square5" onclick="countClick(this)">5</div>
       <div class="square" id="square6" onclick="countClick(this)">6</div>
     </div>
-    <img id="cross" src="assets/cross.svg" alt="cross" />
+    <!-- <img id="cross" src="assets/cross.svg" alt="cross" /> -->
   </body>
 </html>

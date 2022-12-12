@@ -1,19 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RNF Test</title>
     <link rel="stylesheet" href="css/global.css" />
-    <link rel="stylesheet" href="css/drag.css" />
-    <script src="js/matter.min.js" defer></script>
-    <script src="js/decomp.min.js" defer></script>
+    <link rel="stylesheet" href="css/butterfly.css" />
     <script src="js/scripts.js" defer></script>
-    <script src="js/physics.js" defer></script>
+    <script src="js/butterflies.js" defer></script>
   </head>
   <body>
     <nav>
-      <p>Перетащи как можно больше яблок в корзину.</p>
+      <p>Поймай как можно больше бабочек.</p>
       <div class="type">
         <a href="index.html">
           <svg
@@ -41,7 +39,7 @@
             <polygon points="9.2,7.3 9.2,18.5 12.2,15.6 12.6,15.5 17.4,15.5 " />
           </svg>
         </a>
-        <a href="butterfly.html">
+        <a href="#" onclick="reloadPage()">
           <svg
             version="1.1"
             id="Layer_1"
@@ -68,7 +66,7 @@
             </g>
           </svg>
         </a>
-        <a href="#" onclick="reloadPage()">
+        <a href="drag.html">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -159,7 +157,9 @@
         </a>
       </div>
     </nav>
-    <!-- <img id="cross" src="assets/cross.svg" alt="cross" /> -->
-    <canvas id="main"></canvas>
+    <div id="wrapper">
+      <p id="timer"></p>
+      <div id="grid"></div>
+    </div>
   </body>
 </html>

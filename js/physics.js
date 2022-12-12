@@ -1,5 +1,5 @@
 window.addEventListener("DOMContentLoaded", function () {
-  let timer = 5,
+  let timer = 20,
     timerStarted = false,
     counter = 0;
 
@@ -75,6 +75,7 @@ window.addEventListener("DOMContentLoaded", function () {
   render.mouse = mouse;
 
   Events.on(mouseConstraint, "startdrag", (_) => {
+    if (!timerStarted) startTimer();
     _.body.collisionFilter.category = passCategory;
     Body.setStatic(_.body, false);
     dragBody = _.body;
@@ -92,31 +93,6 @@ window.addEventListener("DOMContentLoaded", function () {
       if (_.bodyB.collisionFilter.category === bucketCategory) {
         Composite.remove(engine.world, _.bodyA);
         counter++;
-        if (!timerStarted) {
-          timerStarted = true;
-          let interval = setInterval(() => {
-            timer--;
-            if (timer < 0) {
-              Render.stop(render);
-              Runner.stop(runner);
-              canvas
-                .getContext("2d")
-                .clearRect(0, 0, canvas.width, canvas.height);
-              clearInterval(interval);
-              let p = document.createElement("p");
-              p.innerText = `You scored ${counter} points`;
-              p.style.fontSize = "2rem";
-              p.style.position = "absolute";
-              p.style.top = "50%";
-              p.style.left = "50%";
-              p.style.transform = "translate(-50%, -50%)";
-              document.body.appendChild(p);
-              return;
-            }
-            text.render.text.content = timer.toString();
-            return timer;
-          }, 1000);
-        }
       }
       if (_.bodyB.label === "ground") {
         Body.setPosition(_.bodyA, applesPositions[_.bodyA.id]);
@@ -237,7 +213,7 @@ window.addEventListener("DOMContentLoaded", function () {
     render: {
       fillStyle: "transparent",
       text: {
-        content: "15",
+        content: "20",
         color: "black",
         size: 50,
       },
@@ -255,4 +231,28 @@ window.addEventListener("DOMContentLoaded", function () {
   Render.run(render);
   let runner = Runner.create();
   Runner.run(runner, engine);
+
+  function startTimer() {
+    timerStarted = true;
+    let interval = setInterval(() => {
+      timer--;
+      if (timer < 0) {
+        Render.stop(render);
+        Runner.stop(runner);
+        canvas.getContext("2d").clearRect(0, 0, canvas.width, canvas.height);
+        clearInterval(interval);
+        let p = document.createElement("p");
+        p.innerText = `You scored ${counter} points`;
+        p.style.fontSize = "2rem";
+        p.style.position = "absolute";
+        p.style.top = "50%";
+        p.style.left = "50%";
+        p.style.transform = "translate(-50%, -50%)";
+        document.body.appendChild(p);
+        return;
+      }
+      text.render.text.content = timer.toString();
+      return timer;
+    }, 1000);
+  }
 });

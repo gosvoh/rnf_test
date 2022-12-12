@@ -9,48 +9,58 @@ const squares = {
 let isClicked = false;
 
 function countClick(btn) {
+  if (!isClicked && btn.id === "square1") startCountdown();
   squares[btn.id] += 1;
-  if (!isClicked) startCountdown();
 }
 
 function startCountdown() {
   isClicked = true;
   let wrapper = document.getElementById("wrapper");
-  setTimeout(function () {
-    // squares to table and clear wrapper
-    wrapper.innerHTML = "";
-    let table = document.createElement("table");
-    let thead = document.createElement("thead");
-    let tbody = document.createElement("tbody");
-    let tr = document.createElement("tr");
-    let th = document.createElement("th");
-    th.innerHTML = "Square";
-    tr.appendChild(th);
-    th = document.createElement("th");
-    th.innerHTML = "Clicks";
-    tr.appendChild(th);
-    thead.appendChild(tr);
-    table.appendChild(thead);
-    for (let key in squares) {
-      tr = document.createElement("tr");
-      let td = document.createElement("td");
-      td.innerHTML = key;
-      tr.appendChild(td);
-      td = document.createElement("td");
-      td.innerHTML = squares[key];
-      tr.appendChild(td);
-      tbody.appendChild(tr);
+  let squaresDivs = wrapper.getElementsByClassName("square");
+  let currentSquare = 0;
+
+  let interval = setInterval(() => {
+    squaresDivs.item(currentSquare).style.visibility = "hidden";
+    currentSquare++;
+    if (currentSquare === squaresDivs.length) {
+      wrapper.innerHTML = "";
+      wrapper.style.gridTemplate = "1fr / 1fr";
+      let table = document.createElement("table");
+      let thead = document.createElement("thead");
+      let tbody = document.createElement("tbody");
+      let tr = document.createElement("tr");
+      let th = document.createElement("th");
+      th.innerHTML = "Square";
+      tr.appendChild(th);
+      th = document.createElement("th");
+      th.innerHTML = "Clicks";
+      tr.appendChild(th);
+      thead.appendChild(tr);
+      table.appendChild(thead);
+      for (let key in squares) {
+        tr = document.createElement("tr");
+        let td = document.createElement("td");
+        td.innerHTML = key;
+        tr.appendChild(td);
+        td = document.createElement("td");
+        td.innerHTML = squares[key];
+        tr.appendChild(td);
+        tbody.appendChild(tr);
+      }
+      table.appendChild(tbody);
+      wrapper.appendChild(table);
+      wrapper.style.gridTemplateColumns = "1fr";
+      wrapper.style.width = "auto";
+
+      clearInterval(interval);
     }
-    table.appendChild(tbody);
-    wrapper.appendChild(table);
-    wrapper.style.gridTemplateColumns = "1fr";
-    wrapper.style.width = "auto";
-  }, 15000);
+  }, 5000);
 }
 
 function createDragFrame() {
   let body = document.getElementsByTagName("body")[0];
-  body.innerHTML = "<img id=\"cross\" src=\"./assets/cross.svg\" alt=\"cross\" />";
+  // body.innerHTML = '<img id="cross" src="./assets/cross.svg" alt="cross" />';
+  body.innerHTML = "";
 
   let frame = document.createElement("iframe");
   frame.src = "./drag.html";

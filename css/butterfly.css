@@ -1,0 +1,40 @@
+.butterfly {
+  width: 100%;
+  height: 100%;
+  background-image: url(/assets/butterfly.png);
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+}
+
+#wrapper {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  justify-items: center;
+  align-items: center;
+}
+
+#grid {
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  grid-template-rows: repeat(var(--rows), 1fr);
+  height: 100%;
+  width: 100%;
+}
+
+#grid > .tile {
+  outline: 1px solid black;
+}
+
+#timer {
+  font-size: 2rem;
+  margin: 0 0 1rem 0;
+  text-align: center;
+}
+
+.score {
+  font-size: 2rem;
+}
