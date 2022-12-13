@@ -35,6 +35,7 @@ function startCountdown() {
         squaresDivs.length === 6 ? "butterfly.html" : "drag.html"
       }">Next</a>`;
       wrapper.style.gridTemplateRows = "1fr";
+      wrapper.style.alignItems = "center";
 
       clearInterval(interval);
     } else squaresDivs.item(currentSquare).classList.add("active");
