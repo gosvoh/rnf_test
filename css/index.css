@@ -2,14 +2,22 @@
   display: grid;
   gap: 2rem;
   width: 100%;
-  grid-template-columns: repeat(3, auto);
+  grid-template-rows: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
 }
 
-#wrapper.small {
-  grid-template-columns: repeat(4, auto);
+#wrapper > .row {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
 }
 
-#wrapper > div {
+#wrapper > .row:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.square {
   background-color: #d9d9d9;
   border-radius: 0.25rem;
   aspect-ratio: 1/1;
@@ -20,12 +28,9 @@
   font-size: 3rem;
 }
 
-#wrapper > div:hover {
+.active {
   outline: rgb(26, 198, 94, 65%) solid 0.25rem;
   outline-offset: -0.25rem;
-}
-
-.square {
   cursor: pointer;
 }
 

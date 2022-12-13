@@ -239,16 +239,23 @@ window.addEventListener("DOMContentLoaded", function () {
       if (timer < 0) {
         Render.stop(render);
         Runner.stop(runner);
-        canvas.getContext("2d").clearRect(0, 0, canvas.width, canvas.height);
+        canvas.remove();
         clearInterval(interval);
-        let p = document.createElement("p");
-        p.innerText = `You scored ${counter} points`;
-        p.style.fontSize = "2rem";
-        p.style.position = "absolute";
-        p.style.top = "50%";
-        p.style.left = "50%";
-        p.style.transform = "translate(-50%, -50%)";
-        document.body.appendChild(p);
+        localStorage.setItem("apples", counter);
+
+        let results = localStorage;
+
+        let download = document.createElement("a");
+        download.setAttribute(
+          "href",
+          "data:text/plain;charset=utf-8," + results
+        );
+        download.setAttribute("download", "results.txt");
+        download.innerHTML = "Download results";
+        download.classList.add("next");
+        document.body.appendChild(download);
+        document.body.style.alignItems = "center";
+
         return;
       }
       text.render.text.content = timer.toString();
