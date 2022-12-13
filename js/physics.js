@@ -1,5 +1,5 @@
 window.addEventListener("DOMContentLoaded", function () {
-  let timer = 20,
+  let timer = 1,
     timerStarted = false,
     counter = 0;
 
@@ -246,11 +246,13 @@ window.addEventListener("DOMContentLoaded", function () {
         let results = localStorage;
 
         let download = document.createElement("a");
+
         download.setAttribute(
           "href",
-          "data: application/json;charset=utf-8," + results
+          "data:text/plain;charset=utf-8," +
+            encodeURIComponent(JSON.stringify(results))
         );
-        download.setAttribute("download", "results.txt");
+        download.setAttribute("download", "results.json");
         download.innerHTML = "Download results";
         download.classList.add("next");
         document.body.appendChild(download);
