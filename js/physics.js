@@ -248,7 +248,7 @@ window.addEventListener("DOMContentLoaded", function () {
         let download = document.createElement("a");
         download.setAttribute(
           "href",
-          "data:text/plain;charset=utf-8," + results
+          "data: application/json;charset=utf-8," + results
         );
         download.setAttribute("download", "results.txt");
         download.innerHTML = "Download results";
