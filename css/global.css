@@ -79,3 +79,8 @@ a {
 .next:hover {
   background-color: #d9d9d9;
 }
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}

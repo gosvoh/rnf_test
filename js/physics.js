@@ -256,6 +256,14 @@ window.addEventListener("DOMContentLoaded", function () {
         document.body.appendChild(download);
         document.body.style.alignItems = "center";
 
+        let toIndex = document.createElement("a");
+        toIndex.setAttribute("href", "./index.html");
+        toIndex.innerHTML = "Back to index";
+        toIndex.classList.add("next", "disabled");
+        setTimeout(() => toIndex.classList.remove("disabled"), 5000);
+
+        document.body.appendChild(toIndex);
+
         return;
       }
       text.render.text.content = timer.toString();
