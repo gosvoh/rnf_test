@@ -1,7 +1,7 @@
 .butterfly {
   width: 100%;
   height: 100%;
-  background-image: url(/assets/butterfly.png);
+  background-image: url(assets/butterfly.png);
   background-size: cover;
   background-position: center;
   cursor: pointer;
