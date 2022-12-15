@@ -1,5 +1,5 @@
 window.addEventListener("DOMContentLoaded", function () {
-  let timer = 1,
+  let timer = 20,
     timerStarted = false,
     counter = 0;
 
