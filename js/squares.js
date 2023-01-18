@@ -5,8 +5,8 @@ const squares = {
   4: 0,
   5: 0,
   6: 0,
-  7: 0,
-  8: 0,
+  // 7: 0,
+  // 8: 0,
 };
 let isClicked = false;
 let wrapper = document.getElementById("wrapper");
@@ -31,9 +31,10 @@ function startCountdown() {
         JSON.stringify(squares)
       );
 
-      wrapper.innerHTML = `<a class="next" href="${
-        squaresDivs.length === 6 ? "butterfly.html" : "drag.html"
-      }">Next</a>`;
+      // wrapper.innerHTML = `<a class="next" href="${
+      //   squaresDivs.length === 6 ? "butterfly.html" : "drag.html"
+      // }">Next</a>`;
+      wrapper.innerHTML = `<a class="next" href="butterfly.html">Next</a>`;
       wrapper.style.gridTemplateRows = "1fr";
       wrapper.style.alignItems = "center";
 

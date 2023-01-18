@@ -25,9 +25,9 @@
   width: 100%;
 }
 
-#grid > .tile {
+/* #grid > .tile {
   outline: 1px solid black;
-}
+} */
 
 #timer {
   font-size: 2rem;

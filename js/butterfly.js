@@ -93,7 +93,7 @@ function startTimer() {
     timer.innerHTML = timerValue;
     if (timerValue < 0) {
       clearInterval(interval);
-      wrapper.innerHTML = `<a class="next" href="squares.html">Next</a>`;
+      wrapper.innerHTML = `<a class="next" href="drag.html">Next</a>`;
       wrapper.style.gridTemplateRows = "1fr";
       localStorage.setItem("butterfly", JSON.stringify({ clickCount, log }));
     }
